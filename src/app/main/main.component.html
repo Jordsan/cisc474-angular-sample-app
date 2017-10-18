@@ -1,1 +1,7 @@
-<p>TEST</p>
+<input #searchBox>
+<button (click)="searchRestaurants(searchBox.value)">Search</button>
+
+
+<div *ngFor="let restaurant of restaurants">
+    <app-restaurant-component [restaurant]='restaurant'></app-restaurant-component>
+</div>
