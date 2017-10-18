@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Restaurant } from '../restaurant/restaurant';
+import { RestaurantService } from '../services/restaurant-service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class MainComponent implements OnInit {
 
     restaurants: Restaurant[];
 
-    constructor() {
+    constructor(private restaurantService: RestaurantService) {
         this.restaurants = new Array();
 
         this.restaurants.push({
@@ -42,5 +43,6 @@ export class MainComponent implements OnInit {
 
     searchRestaurants(input: string): void {
         console.log(input);
+        this.restaurantService.getRestaurants().then(list => console.log(list));
     }
 }
