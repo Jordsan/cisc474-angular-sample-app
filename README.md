@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+# cisc474-angular-sample-app
+CISC474 Project 2
+
 # TopRestaurants
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
@@ -27,7 +29,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# cisc474-angular-sample-app
-CISC474 Project 2
->>>>>>> 09e0f6fd981312394fb0995f8658d62ba8c8b5a5
+
