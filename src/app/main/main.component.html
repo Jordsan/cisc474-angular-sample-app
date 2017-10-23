@@ -1,7 +1,16 @@
-<input #searchBoxLat placeholder="latitude" value="41.1408">
-<input #searchBoxLon placeholder="longitude" value="-73.2613">
-<button (click)="searchRestaurants(searchBoxLat.value, searchBoxLon.value)">Search</button>
-
+<div class="container-fluid input-row">
+    <div class="row">
+        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 centered">
+            <span class="label-padding">Latitude:</span><input #searchBoxLat placeholder="latitude" value="41.1408">
+        </span>
+        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 centered">
+            <span class="label-padding">Longitude:</span><input #searchBoxLon placeholder="longitude" value="-73.2613">
+        </span>
+        <span class="col-xs-4 col-sm-4 col-md-4 col-lg-4 centered">
+            <button (click)="searchRestaurants(searchBoxLat.value, searchBoxLon.value)">Search</button>
+        </span>
+    </div>
+</div>
 
 <div *ngFor="let restaurant of restaurants">
     <app-restaurant-component [restaurant]='restaurant'></app-restaurant-component>

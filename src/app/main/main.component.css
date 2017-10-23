@@ -1,0 +1,20 @@
+.input-row {
+    width: 100vw;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.input-row button, input {
+    width: 200px;
+    font-size: 20px;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-padding {
+    margin-right: 5px;
+}

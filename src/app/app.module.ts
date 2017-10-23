@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+import { AlertModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +20,8 @@ import { RestaurantService } from './services/restaurant-service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    AlertModule.forRoot()
   ],
   providers: [RestaurantService],
   bootstrap: [AppComponent]

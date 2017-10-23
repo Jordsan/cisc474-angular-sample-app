@@ -15,25 +15,6 @@ export class MainComponent implements OnInit {
 
     constructor(private restaurantService: RestaurantService) {
         this.restaurants = new Array();
-
-        this.restaurants.push({
-            name: 'TEST NAME 1',
-            address: '123 TEST STREET 1',
-            rating: 1337,
-            image: 'nolink.1'
-        });
-        this.restaurants.push({
-            name: 'TEST NAME 2',
-            address: '123 TEST STREET 2',
-            rating: 1337,
-            image: 'nolink.2'
-        })
-        this.restaurants.push({
-            name: 'TEST NAME 3',
-            address: '123 TEST STREET 3',
-            rating: 1337,
-            image: 'nolink.3'
-        })
     }
 
     ngOnInit(): void {
@@ -42,7 +23,6 @@ export class MainComponent implements OnInit {
     }
 
     searchRestaurants(lat: string, lon: string): void {
-        console.log(lat + ', ' + lon);
         this.restaurantService.getRestaurants(lat, lon).then(list => this.parseJSON(list));
     }
 
