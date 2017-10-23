@@ -10,7 +10,7 @@ import { Restaurant } from '../restaurant/restaurant'
 @Injectable()
 export class RestaurantService {
 
-    private apiURL = 'https://developers.zomato.com/api/v2.1/restaurant?res_id=16774318';
+    private apiURL = 'https://developers.zomato.com/api/v2.1/search?';
     private headers = new Headers({
         'Content-Type': 'application/json',
         'user-key' : 'd1b68f3bad58bedf80c1b481857c0f30'
@@ -18,8 +18,11 @@ export class RestaurantService {
 
     constructor(private http: Http) { }
 
-    getRestaurants(): Promise<Restaurant[]> {
-        return this.http.get(this.apiURL, {headers: this.headers})
+    // lat=41.1408&lon=-73.2613&radius=1000
+
+    getRestaurants(lat: string, lon: string): Promise<Restaurant[]> {
+        let finalUrl: string = this.apiURL + 'lat=' + lat + '&lon=' + lon + '&radius=1000&sort=rating';
+        return this.http.get(finalUrl, {headers: this.headers})
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);

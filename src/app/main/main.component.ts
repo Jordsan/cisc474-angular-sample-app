@@ -41,8 +41,23 @@ export class MainComponent implements OnInit {
 
     }
 
-    searchRestaurants(input: string): void {
-        console.log(input);
-        this.restaurantService.getRestaurants().then(list => console.log(list));
+    searchRestaurants(lat: string, lon: string): void {
+        console.log(lat + ', ' + lon);
+        this.restaurantService.getRestaurants(lat, lon).then(list => this.parseJSON(list));
+    }
+
+    parseJSON(list): void {
+        let returnList: Restaurant[] = new Array();
+
+        for (let item of list.restaurants){
+            returnList.push({
+                name: item.restaurant.name,
+                address: item.restaurant.location.address,
+                rating: item.restaurant.user_rating.aggregate_rating,
+                image: item.restaurant.photos_url
+            })
+        }
+
+        this.restaurants = returnList;
     }
 }

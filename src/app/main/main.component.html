@@ -1,5 +1,6 @@
-<input #searchBox>
-<button (click)="searchRestaurants(searchBox.value)">Search</button>
+<input #searchBoxLat placeholder="latitude" value="41.1408">
+<input #searchBoxLon placeholder="longitude" value="-73.2613">
+<button (click)="searchRestaurants(searchBoxLat.value, searchBoxLon.value)">Search</button>
 
 
 <div *ngFor="let restaurant of restaurants">
